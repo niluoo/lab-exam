@@ -16,3 +16,22 @@ OOP (JAVA)
  - Multi threading 1
  - Binary search
 </pre>
+
+<pre>
+ DS
+  - Sparse Matrix
+  - Stack
+  - Queue
+  - Circular Queue 
+  - Polynomial addition
+  - Infix to Postfix
+  - Linear & Binary Search
+  - Singly LL
+  - Stack LL
+  - Queue LL
+  - BST
+  - DFS
+  - BFS
+  - Bubble sort
+  - Quick sort
+</pre>
