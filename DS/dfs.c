@@ -9,37 +9,41 @@ void dfs(int n, int node, int graph[n][n]) {
   visited[node] = 1;
   printf("%d ", node);
   for(int i = 0; i < n; ++i) {
-    if(graph[i][node]) {
+    if(graph[i][node] || graph[node][i]) {
       dfs(n, i, graph);
     }
   }
 }
 
 int main() {
-  printf("Enter number of vertices: ");
-  int n;
-  scanf("%d", &n);
+ // printf("Enter number of vertices and edges: ");
+  int n, m;
+  scanf("%d%d", &n, &m);
   int visited[n];
   for(int i = 0; i < n; ++i) {
     visited[i] = 0;
   }
 
   int graph[n][n];
-  printf("Enter the adjacency matrix: ");
   for(int i = 0; i < n; ++i) {
     for(int j = 0; j < n; ++j) {
-      scanf("%d", &graph[i][j]);
+      graph[i][j] = 0;
     }
   }
-
-  printf("Enter starting vertex: ");
+  //printf("Add egdes to the graph: \n");
+  for(int i = 0; i < m; ++i) {
+    int a, b;
+    scanf("%d%d", &a, &b);
+    graph[a][b] = 1;
+  }
+  //printf("Enter starting vertex: ");
   int start;
   scanf("%d", &start);
   printf("DFS traversal: ");
   
   
   dfs(n, start, graph);
-
+  
   return 0;
   
 }
