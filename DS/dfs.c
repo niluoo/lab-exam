@@ -36,11 +36,11 @@ int main() {
     scanf("%d%d", &a, &b);
     graph[a][b] = 1;
   }
+  
   printf("Enter starting vertex: ");
   int start;
   scanf("%d", &start);
   printf("DFS traversal: ");
-  
   
   dfs(n, start, graph);
   
