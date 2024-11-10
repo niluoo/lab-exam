@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int n, visited[100], graph[100][100];
+int n, visited[10], graph[10][10];
 
 void dfs(int n, int node, int graph[n][n]) {
   if(visited[node]) {
