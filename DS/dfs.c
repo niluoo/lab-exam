@@ -16,7 +16,7 @@ void dfs(int n, int node, int graph[n][n]) {
 }
 
 int main() {
- // printf("Enter number of vertices and edges: ");
+  printf("Enter number of vertices and edges: ");
   int n, m;
   scanf("%d%d", &n, &m);
   int visited[n];
@@ -30,13 +30,13 @@ int main() {
       graph[i][j] = 0;
     }
   }
-  //printf("Add egdes to the graph: \n");
+  printf("Add egdes to the graph: \n");
   for(int i = 0; i < m; ++i) {
     int a, b;
     scanf("%d%d", &a, &b);
     graph[a][b] = 1;
   }
-  //printf("Enter starting vertex: ");
+  printf("Enter starting vertex: ");
   int start;
   scanf("%d", &start);
   printf("DFS traversal: ");
