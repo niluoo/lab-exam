@@ -10,7 +10,7 @@ void insert_begin() {
   struct Node *new_node;
   new_node = (struct Node *) malloc(sizeof(struct Node));
   if(new_node == NULL) {
-    puts("Out of memory space");
+    puts("Out of memory space!");
   }
   else {
     printf("Enter data to insert: ");
@@ -28,7 +28,25 @@ void insert_begin() {
 }
 
 void insert_end() {
-  
+  struct Node *new_node, *ptr;
+  new_node = (struct Node *) malloc(sizeof(struct Node));
+  if(new_node == NULL) {
+    puts("Out of memory space!");
+  }
+  else {
+    printf("Enter data to insert: ");
+    scanf("%d", &new_node->data);
+    new_node->link = NULL;
+    if(front == NULL) {
+      front = new_node;
+    }
+    else {
+      for(ptr = front; ptr->link != NULL; ptr=ptr->link) {
+        // finding last node
+      }
+      ptr->link = new_node;
+    }
+  }
 }
 
 void insert_pos() {
