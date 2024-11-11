@@ -1,8 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct Node {
+  int data;
+  struct Node *link;
+} *front = NULL;
+
 void insert_begin() {
-  
+  struct Node *new_node;
+  new_node = (struct Node *) malloc(sizeof(struct Node));
+  if(new_node == NULL) {
+    puts("Out of memory space");
+  }
+  else {
+    printf("Enter data to insert: ");
+    scanf("%d", &new_node->data);
+    new_node->link = NULL;
+  }
 }
 
 void insert_end() {
