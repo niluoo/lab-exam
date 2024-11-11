@@ -16,6 +16,14 @@ void insert_begin() {
     printf("Enter data to insert: ");
     scanf("%d", &new_node->data);
     new_node->link = NULL;
+    if(front == NULL) {
+      front = new_node;
+    }
+    else {
+      new_node->link = front;
+      front = new_node;
+    }
+    printf("%d inserted\n", new_node->data);
   }
 }
 
