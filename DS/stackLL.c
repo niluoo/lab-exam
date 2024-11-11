@@ -13,10 +13,40 @@ void create_node() {
   new_node->link = NULL;
 }
 
+void push() {
+  create_node();
+  printf("Enter item: ");
+  int item;
+  scanf("%d", &item);
+  new_node->data = item;
+  new_node->link = top;
+  top = new_node;
+  head->link = top;
+}
+
+void pop() {
+  if(top == NULL) {
+    puts("");
+    puts("STACK EMPTY");
+    puts("");
+  }
+  else {
+    ptr = top->link;
+    int item = top->data;
+    printf("%d deleted from stack\n", item);
+    free(top);
+    head->link = ptr;
+    top = ptr;
+  }
+}
+
+
+
 int main() {
   head = (struct Node*) malloc(sizeof(struct Node));
   head->link = NULL;
-
+  top = NULL;
+  
   puts("");
   puts("-- STACK OPERATIONS --");
   puts("1. PUSH");
