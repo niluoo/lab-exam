@@ -40,7 +40,33 @@ void pop() {
   }
 }
 
+void status() {
+  if(top == NULL) {
+    puts("");
+    puts("-- STACK STATUS --");
+    puts("");
+    puts("Stack Empty");
+    puts(""):
+  }
+  else {
+    puts("");
+    puts("-- STACK STATUS --");
+    puts("");
+    printf("Item on top of stack: %d\n", top->data);
+    int cnt = 0;
+    ptr = head->link;
+    while(ptr != NULL) {
+      cnt++;
+      ptr = ptr->link;
+    }
+    printf("Stack contains %d items\n", cnt);
+    puts("");
+  }
+}
 
+void display() {
+  
+}
 
 int main() {
   head = (struct Node*) malloc(sizeof(struct Node));
@@ -49,6 +75,7 @@ int main() {
   
   puts("");
   puts("-- STACK OPERATIONS --");
+  puts("");
   puts("1. PUSH");
   puts("2. POP");
   puts("3. STATUS");
