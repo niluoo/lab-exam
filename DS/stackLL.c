@@ -65,7 +65,21 @@ void status() {
 }
 
 void display() {
-  
+  if(top == NULL) {
+    puts("");
+    puts("STACK EMPTY");
+    puts("");
+  }
+  else {
+    printf("Stack: ");
+    ptr = top;
+    printf("->");
+    while(ptr->link != NULL) {
+      printf("%d-> ", ptr->data);
+      ptr = ptr->link;
+    }
+    printf("%d\n", ptr->data);
+  }
 }
 
 int main() {
