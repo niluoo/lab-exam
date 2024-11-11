@@ -35,12 +35,14 @@ int main() {
     }
   }
 
-  puts("Sparse Matrix: ");
-  for(int i = 0; i  < cnt+1; ++i) {
-    for(int j = 0; j < 3; ++j) {
-      prinf("%d ", sparse[i][j]);
+  if(cnt != 0) {
+    puts("Sparse Matrix: ");
+    for(int i = 0; i  < cnt+1; ++i) {
+      for(int j = 0; j < 3; ++j) {
+        prinf("%d ", sparse[i][j]);
+      }
+      puts("");
     }
-    puts("");
   }
   
   return 0;
