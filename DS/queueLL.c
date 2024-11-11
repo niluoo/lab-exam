@@ -63,7 +63,6 @@ void display() {
 int main() {
   puts("");
   puts("-- QUEUE OPERATIONS --");
-  puts("");
   puts("1. INSERT");
   puts("2. DELETE");
   puts("3. DISPLAY");
