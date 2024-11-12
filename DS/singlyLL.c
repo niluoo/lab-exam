@@ -66,11 +66,40 @@ void delete_pos() {
 }
 
 void display() {
-  
+  struct Node *ptr;
+  if(front == NULL) {
+    puts("Linked-List empty!");
+  }
+  else {
+    printf("Elements: ");
+    for(ptr=front; ptr->link != NULL; ptr=ptr->link) {
+      printf("%d ", ptr->data);
+    }
+    printf("%d\n", ptr->data);
+  }
 }
 
 void search() {
-  
+  struct Node *ptr;
+  if(front == NULL) {
+    puts("Linked-List empty!");
+  }
+  else {
+    int pos = 1;
+    printf("Enter element to be searched: ");
+    int key;
+    scanf("%d", &key);
+    while(ptr->data != key || ptr->link == NULL) {
+      ptr = ptr->link;
+      pos++;
+    }
+    if(ptr->data == key) {
+      printf("%d found at position %d\n", key, pos);
+    }
+    else {
+      puts("Element not found!");
+    }
+  }
 }
 
 int main() {
