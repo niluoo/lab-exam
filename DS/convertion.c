@@ -11,8 +11,12 @@ void push(char x) {
 }
 
 char pop() {
-  return stack[top];
-  top--;
+  if(top == -1) {
+    return -1;
+  }
+  else {
+    return stack[top--];
+  }
 }
 
 int prty(char x) {
@@ -55,8 +59,8 @@ int main() {
     else {
       while(prty(stack[top]) >= prty(*c)) {
         printf("%c", pop());
-        push(*c);
       }
+      push(*c);
     }
     c++;
   }
