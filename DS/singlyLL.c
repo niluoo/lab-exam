@@ -112,7 +112,36 @@ void delete_end() {
 }
 
 void delete_pos() {
-  
+  if(front == NULL) {
+    puts("Linked-List empty!");
+  }
+  else {
+    printf("Enter key to delete: ");
+    int key;
+    scanf("%d", &key);
+    struct Node *cur, *prv;
+    if(front->data == key) {
+      cur = front;
+      printf("%d deleted\n", cur->data);
+      front = front->link;
+      free(cur);
+    }
+    else {
+      prv = cur = front;
+      while((cur->data != key) && (cur->link != NULL)) {
+        prv = cur;
+        cur = cur->link;
+      }
+      if(cur->data != key) {
+        puts("Search key not found!");
+      }
+      else {
+        prv->link = cur->link;
+        free(cur);
+        printf("%d deleted\n", key);
+      }
+    }
+  }
 }
 
 void display() {
