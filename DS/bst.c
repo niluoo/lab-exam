@@ -18,11 +18,12 @@ struct Node* insert(struct Node *root, int key) {
     return new_node(key);
   }
   else if(key > root->data) {
-
+    root->right = insert(root->right, key);
   }
   else {
-
+    root->left = insert(root->left, key);
   }
+  return root;
   printf("%d inserted\n", key);
 }
 
