@@ -111,6 +111,25 @@ void postorder(struct Node *root) {
   }
 }
 
+int search(struct Node *root, int key) {
+  int found = 0;
+  struct Node *ptr;
+  ptr = root;
+  while((ptr != NULL) && (!found)) {
+    if(key > ptr->data) {
+      ptr = ptr->right;
+    }
+    else if(key < ptr->data) {
+      ptr = ptr->left;
+    }
+    else {
+      // key found
+      found = 1;
+    }
+  }
+  return found;
+}
+
 int main() {
   struct Node *root, *min, *max;
   prinf("Enter number of keys: ");
