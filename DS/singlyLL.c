@@ -54,11 +54,32 @@ void insert_pos() {
 }
 
 void delete_begin() {
-  
+  if(front == NULL) {
+    puts("Linked-List empty!");
+  }
+  else {
+    struct Node *ptr;
+    ptr = front;
+    front = front->link;
+    free(ptr);
+  }
 }
 
 void delete_end() {
-  
+  if(front == NULL) {
+    puts("Linked-List empty!");
+  }
+  else {
+    struct Node *cur, *prv;
+    cur = prv = front;
+    while(cur->link != NULL) {
+      prv = cur;
+      cur = cur->link;
+    }
+    prv->link = NULL;
+    printf("%d deleted\n", cur->data);
+    free(cur);
+  }
 }
 
 void delete_pos() {
