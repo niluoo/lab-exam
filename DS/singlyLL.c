@@ -89,7 +89,7 @@ void search() {
     printf("Enter element to be searched: ");
     int key;
     scanf("%d", &key);
-    while(ptr->data != key || ptr->link == NULL) {
+    while(ptr->data != key && ptr->link != NULL) {
       ptr = ptr->link;
       pos++;
     }
