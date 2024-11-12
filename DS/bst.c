@@ -27,8 +27,68 @@ struct Node* insert(struct Node *root, int key) {
   printf("%d inserted\n", key);
 }
 
+struct Node* find_min(struct Node *root) {
+  struct Node *ptr, *parent;
+  ptr = root;
+  while(ptr != NULL) {
+    parent = ptr;
+    ptr = ptr->left;
+  }
+  return parent;
+}
+
+struct Node* find_max(struct Node *root) {
+  struct Node *ptr, *parent;
+  ptr = root;
+  while(ptr != NULL) {
+    parent = ptr;
+    ptr = ptr->right;
+  }
+  return parent;
+}
+
+struct Node* delete(struct Node *root, int key) {
+  if(root == NULL) {
+    return NULL;
+  }
+  if(x > root->data) {
+    root->right = delete(root->right, key);
+  }
+  else if(x < root->data) {
+    root->left = delete(root->left, key);
+  }
+  else {
+    // leaf node
+    if(root->left == NULL && root->right == NULL) {
+      free(root);
+      return NULL;
+    }
+    else if(root->left == NULL || root->right == NULL) {
+      // either left or right subtree exist
+      struct Node* tmp;
+      if(root->left == NULL) {
+        // right subtree exist
+        tmp = root->right;
+      }
+      else {
+        // left
+        tmp = root->left;
+      }
+      free(root);
+      return tmp;
+    }
+    else {
+      // both left and right subtree exist
+      struct Node *tmp = find_min(root->right_child);
+      root->data = tmp->data;
+      root->right = delete(root->right, tmp->data);
+    }
+  }
+  return root;
+}
+
 int main() {
-  struct Node *root;
+  struct Node *root, *min, *max;
   prinf("Enter number of keys: ");
   int n;
   scanf("%d", &n);
@@ -87,10 +147,12 @@ int main() {
         postorder(root);
         break;
       case 7:
-        find_min();
+        min = find_min(root);
+        printf("Smallest element in the tree: %d\n", min->data);
         break;
       case 8:
-        find_max();
+        max = find_max(root);
+        printf("Largest element in the tree: %d\n", max->data);
         break;
       case 9:
         puts("");
