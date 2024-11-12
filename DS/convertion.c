@@ -1,5 +1,6 @@
 // Infix to Postfix
 #include <stdio.h>
+#include <ctype.h>
 
 char stack[100];
 int top = -1;
@@ -39,7 +40,7 @@ int main() {
   c = infix;
 
   while(*c != '\0') {
-    if(isalnum(c)) {
+    if(isalnum(*c)) {
       printf("%c", *c);
     }
     else if(*c == '(') {
