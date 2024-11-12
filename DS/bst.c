@@ -47,7 +47,7 @@ struct Node* find_max(struct Node *root) {
   return parent;
 }
 
-struct Node* delete(struct Node *root, int key) {
+struct Node* remove(struct Node *root, int key) {
   if(root == NULL) {
     return NULL;
   }
@@ -132,7 +132,9 @@ int main() {
         insert(root, key);
         break;
       case 2:
-        remove();
+        printf("Enter key to delete: ");
+        scanf("%d", &key);
+        root = remove(root, key);
         break;
       case 3:
         search();
