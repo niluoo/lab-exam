@@ -87,6 +87,30 @@ struct Node* remove(struct Node *root, int key) {
   return root;
 }
 
+void inorder(struct Node *root) {
+  if(root != NULL) {
+    inorder(root->left);
+    printf("%d ", root->data);
+    inorder(root->right);
+  }
+}
+
+void preorder(struct Node *root) {
+  if(root != NULL) {
+    printf("%d ", root->data);
+    preorder(root->left);
+    preorder(root->right);
+  }
+}
+
+void postorder(struct Node *root) {
+  if(root != NULL) {
+    postorder(root->left);
+    postorder(root->right);
+    printf("%d ", root->data);
+  }
+}
+
 int main() {
   struct Node *root, *min, *max;
   prinf("Enter number of keys: ");
@@ -140,12 +164,15 @@ int main() {
         search();
         break;
       case 4:
+        printf("In-order: ");
         inorder(root);
         break;
       case 5:
+        printf("Pre-order: ");
         preorder(root);
         break;
       case 6:
+        printf("Post-order: ");
         postorder(root);
         break;
       case 7:
