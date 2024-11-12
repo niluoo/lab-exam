@@ -52,10 +52,10 @@ struct Node* remove(struct Node *root, int key) {
     return NULL;
   }
   if(x > root->data) {
-    root->right = delete(root->right, key);
+    root->right = remove(root->right, key);
   }
   else if(x < root->data) {
-    root->left = delete(root->left, key);
+    root->left = remove(root->left, key);
   }
   else {
     // leaf node
@@ -81,7 +81,7 @@ struct Node* remove(struct Node *root, int key) {
       // both left and right subtree exist
       struct Node *tmp = find_min(root->right_child);
       root->data = tmp->data;
-      root->right = delete(root->right, tmp->data);
+      root->right = remove(root->right, tmp->data);
     }
   }
   return root;
