@@ -161,7 +161,15 @@ int main() {
         root = remove(root, key);
         break;
       case 3:
-        search();
+        printf("Enter key to search: ");
+        scanf("%d", &key);
+        int found = search(root, key);
+        if(found) {
+          printf("%d found\n", key);
+        }
+        else {
+          printf("%d not found!\n", key);
+        }
         break;
       case 4:
         printf("In-order: ");
