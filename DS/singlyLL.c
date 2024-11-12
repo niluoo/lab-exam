@@ -157,7 +157,7 @@ int main() {
   puts("");
   puts("1. Insert at front");
   puts("2. Insert at end");
-  puts("3. Insert after a specified node");
+  puts("3. Insert after a specific node");
   puts("4. Delete from front");
   puts("5. Delete from end");
   puts("6. Delete a specific node");
