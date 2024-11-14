@@ -12,7 +12,7 @@ class Frequency {
     int freq = 0;
     int n = s.length();
     for(int i = 0; i < n; ++i) {
-      if(c == s.charAt(i)) {
+      if(s.charAt(i) == c) {
         freq++;
       }
     }
