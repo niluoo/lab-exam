@@ -4,7 +4,6 @@ OOP (JAVA)
  - Palindrome
  - Second largest(smallest)
  - Transpose
- - Matrix multiplication
  - Reverse of a string
  - frequency of character
  - Inheritance 2
@@ -15,6 +14,7 @@ OOP (JAVA)
  - Exception Handling
  - Multi threading 1
  - Binary search
+ - Thread Synchronization
 </pre>
 
 <pre>
